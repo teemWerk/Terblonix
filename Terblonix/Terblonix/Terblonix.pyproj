@@ -16,7 +16,7 @@
     <InterpreterVersion>2.7</InterpreterVersion>
     <OutputPath>.</OutputPath>
     <Name>Terblonix</Name>
-    <RootNamespace>IPYWpf</RootNamespace>
+    <RootNamespace>Terblonix</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
