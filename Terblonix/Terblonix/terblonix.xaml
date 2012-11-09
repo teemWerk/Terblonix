@@ -1,19 +1,19 @@
 ﻿<Window 
        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-       Title="Portblonix" Width="800" Height="600" WindowStyle="None" ResizeMode="NoResize"
+       Title="Terblonix" Width="800" Height="600" WindowStyle="None" ResizeMode="NoResize"
        AllowsTransparency="True" Background="Transparent"
        x:Name="window">
     <Border Margin="10">
         <Border.Effect>
-            <DropShadowEffect Color="Lime"
-                              Direction="315"
-                              BlurRadius="10"
-                              ShadowDepth="8" />
+            <DropShadowEffect Color="Black"
+                              Direction="270"
+                              BlurRadius="20"
+                              ShadowDepth="3" />
         </Border.Effect>
         <Grid Margin="10,10,10,10">
             <Grid.Background>
-                <SolidColorBrush Color="Black">
+                <SolidColorBrush Color="Gray">
                 </SolidColorBrush>
             </Grid.Background>
             <Grid.RowDefinitions>
@@ -22,35 +22,39 @@
                 <RowDefinition Height="28" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="15"/>
             </Grid.ColumnDefinitions>
             <DockPanel Grid.ColumnSpan="4" Grid.RowSpan="4">
                 <DockPanel DockPanel.Dock="Top"
                            Height="32"
-                           Background="OrangeRed"
+                           Background="#400040"
                            x:Name="dockbar">
                     <TextBlock Padding="8"
                                VerticalAlignment="Center"
                                HorizontalAlignment="Center"
-                               Text="Portblonix"
+                               Text="Terblonix"
                                Foreground="Black"
                                FontWeight="Bold"
-                               FontSize="18" />
+                               FontSize="18" />                   
                     </DockPanel>
                 <ContentControl Name="content" />
             </DockPanel>
-            <Label Grid.Row="0" Grid.Column="0" Content="Oblobna:" Grid.ColumnSpan="2" Margin="0,39,199,8" Foreground="White"/>
-            <Label Grid.Row="1" Grid.Column="0" Content="Buffer:" Grid.ColumnSpan="2" Margin="0,0,199,0" Foreground="White"/>
-            <StackPanel Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="4,3,1,3" Orientation="Horizontal" HorizontalAlignment="Right">
-                <Label Content="Port:" Margin="0,36,5,8" Foreground="White"/>
+            <Label Grid.Row="0" Grid.Column="0" Content="Oblobna:" Margin="0,39,0,8" Foreground="Black"/>
+            <Label Grid.Row="1" Grid.Column="0" Content="Buffer:" Margin="0,0,0,0" Foreground="Black"/>
+            <StackPanel Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Right" Orientation="Horizontal">
+                <Label Content="Port:" Margin="0,36,5,8" Foreground="Black"/>
                 <ComboBox FontSize="16" Width="172" Margin="5,36,5,8" x:Name="combo1"></ComboBox>
                 <Button FontSize="16" Margin="5,36,5,8" x:Name="connect">Connect</Button>
                 <Button FontSize="16" Margin="5,36,5,8" x:Name="rescan">Scan Ports</Button>
             </StackPanel>
             <TextBox Grid.Row="1" Grid.Column="1" Margin="2,3,3,3" Width="500"/>
+            <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+                <TextBox Height="28" Width="400" Margin="2,3,3,3"/>
+                <Button Content="Send" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,0,0,0" Width="83"/>
+            </StackPanel>
         </Grid>
     </Border>
 </Window> 
