@@ -50,10 +50,10 @@
                 <Button FontSize="16" Margin="5,36,5,8" x:Name="connect">Connect</Button>
                 <Button FontSize="16" Margin="5,36,5,8" x:Name="rescan">Scan Ports</Button>
             </StackPanel>
-            <TextBox Grid.Row="1" Grid.Column="1" Margin="2,3,3,3" Width="500"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="2,3,3,3" Width="500" x:Name="outputBox"/>
             <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
-                <TextBox Height="28" Width="400" Margin="2,3,3,3"/>
-                <Button Content="Send" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,0,0,0" Width="83"/>
+                <TextBox Width="400" Margin="2,3,3,3" x:Name="inputBox"/>
+                <Button Content="Send" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,3,0,3" Width="88" x:Name="send" Background="#FFE4E4E4" BorderThickness="0"/>
             </StackPanel>
         </Grid>
     </Border>
