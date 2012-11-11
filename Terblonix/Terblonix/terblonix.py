@@ -40,6 +40,8 @@ class MainWin(object):
         self.rescan = self.Root.FindName('rescan')
         self.rescan.Click += self.scanClick
 
+        self.portStack = self.Root.FindName('portStack')
+
         self.dockbar = self.Root.FindName('dockbar')
         self.dockbar.MouseLeftButtonDown += self.dragDock
 
@@ -49,6 +51,9 @@ class MainWin(object):
 
         self.send = self.Root.FindName('send')
         self.send.Click += self.sendClick
+
+        self.clear = self.Root.FindName('clear')
+        self.clear.Click += self.clearClick
 
     def scanClick(self, sender, event):
         self.combo.Items.Clear()
@@ -78,13 +83,20 @@ class MainWin(object):
         self.term.Write(self.inputBuff.Text)
         self.inputBuff.Text = ''
 
+    def clearClick(self, sender, event):
+        self.outputBuff.Clear()
+
     def dataRX(self, sender, event):
-        tempText = self.term.ReadExisting()
+        tempText = self.term.ReadExisting().replace('\\n','\r\n')
         textDelegate = self.outDel(tempText)
         self.outputBuff.Dispatcher.Invoke(DispatcherPriority.Normal, textDelegate)
+        self.outputBuff.Dispatcher.Invoke(DispatcherPriority.Normal, self.scrollToBottom())
 
     def outDel(self, text):
-        return CallTarget0(lambda: TextBox.AppendText(self.outputBuff, text + '\n'))
+        return CallTarget0(lambda:TextBox.AppendText(self.outputBuff, text))
+
+    def scrollToBottom(self):
+        return CallTarget0(lambda:TextBox.ScrollToEnd(self.outputBuff))
 
 
 stage = MainWin()
