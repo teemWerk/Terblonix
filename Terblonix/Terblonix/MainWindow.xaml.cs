@@ -59,6 +59,12 @@ namespace Terblonix
         private void DragDock(object sender, MouseButtonEventArgs e)
         {
             window.DragMove();
+            if (window.ResizeMode == ResizeMode.NoResize)
+            {
+                window.ResizeMode = ResizeMode.CanResizeWithGrip;
+                window.Width = 800;
+                window.Height = 600;
+            }
         }
 
         private void send_Click(object sender, RoutedEventArgs e)
@@ -94,6 +100,9 @@ namespace Terblonix
         {
             window.Width = SystemParameters.WorkArea.Width;
             window.Height = SystemParameters.WorkArea.Height;
+            window.Left = 0;
+            window.Top = 0;
+            window.ResizeMode = ResizeMode.NoResize;
         }
 
         private void min_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
