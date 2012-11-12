@@ -1,0 +1,12 @@
+C:\Users\cantwt\Documents\GitHub\Terblonix\Terblonix\Terblonix\bin\Release\Terblonix.exe.config
+C:\Users\cantwt\Documents\GitHub\Terblonix\Terblonix\Terblonix\bin\Release\Terblonix.exe
+C:\Users\cantwt\Documents\GitHub\Terblonix\Terblonix\Terblonix\bin\Release\Terblonix.pdb
+C:\Users\cantwt\Documents\GitHub\Terblonix\Terblonix\Terblonix\obj\Release\MainWindow.baml
+C:\Users\cantwt\Documents\GitHub\Terblonix\Terblonix\Terblonix\obj\Release\MainWindow.g.cs
+C:\Users\cantwt\Documents\GitHub\Terblonix\Terblonix\Terblonix\obj\Release\App.g.cs
+C:\Users\cantwt\Documents\GitHub\Terblonix\Terblonix\Terblonix\obj\Release\Terblonix_MarkupCompile.cache
+C:\Users\cantwt\Documents\GitHub\Terblonix\Terblonix\Terblonix\obj\Release\Terblonix.g.resources
+C:\Users\cantwt\Documents\GitHub\Terblonix\Terblonix\Terblonix\obj\Release\Terblonix.Properties.Resources.resources
+C:\Users\cantwt\Documents\GitHub\Terblonix\Terblonix\Terblonix\obj\Release\Terblonix.csproj.GenerateResource.Cache
+C:\Users\cantwt\Documents\GitHub\Terblonix\Terblonix\Terblonix\obj\Release\Terblonix.exe
+C:\Users\cantwt\Documents\GitHub\Terblonix\Terblonix\Terblonix\obj\Release\Terblonix.pdb

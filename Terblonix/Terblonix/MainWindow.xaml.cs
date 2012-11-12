@@ -80,5 +80,25 @@ namespace Terblonix
             outputBox.Dispatcher.Invoke(delegate() { outputBox.ScrollToEnd(); });
         }
 
+        private void close_MouseLeftButtonUp_1(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void close_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            window.Close();
+        }
+
+        private void max_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            window.Width = SystemParameters.WorkArea.Width;
+            window.Height = SystemParameters.WorkArea.Height;
+        }
+
+        private void min_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            window.WindowState = WindowState.Minimized;
+        }
     }
 }

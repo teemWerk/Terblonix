@@ -26,9 +26,9 @@
                             FontSize="18" 
                             MouseLeftButtonDown="DragDock"/>
             </DockPanel>
-            <Rectangle Fill="Transparent" Height="20" Stroke="Transparent" VerticalAlignment="Top" x:Name="min" Margin="205,-1,59,0" Panel.ZIndex="5" Grid.Column="1"/>
-            <Rectangle Fill="Transparent" Height="20" Stroke="Transparent" VerticalAlignment="Top" x:Name="max" Margin="225,-1,39,0" Panel.ZIndex="5" Grid.Column="1"/>
-            <Rectangle Fill="Transparent" Height="20" Stroke="Transparent" VerticalAlignment="Top" x:Name="close" Margin="245,-1,-1,0" Panel.ZIndex="5" Grid.Column="1"/>
+            <Rectangle Fill="Transparent" Height="20" Stroke="Transparent" VerticalAlignment="Top" x:Name="min" Margin="205,-1,59,0" Panel.ZIndex="5" Grid.Column="1" MouseLeftButtonUp="min_MouseLeftButtonUp"/>
+            <Rectangle Fill="Transparent" Height="20" Stroke="Transparent" VerticalAlignment="Top" x:Name="max" Margin="225,-1,39,0" Panel.ZIndex="5" Grid.Column="1" MouseLeftButtonUp="max_MouseLeftButtonUp"/>
+            <Rectangle Fill="Transparent" Height="20" Stroke="Transparent" VerticalAlignment="Top" x:Name="close" Margin="245,-1,-1,0" Panel.ZIndex="5" Grid.Column="1" MouseLeftButtonUp="close_MouseLeftButtonUp"/>
             <Image HorizontalAlignment="Left" Height="10" Margin="210,4,0,0" VerticalAlignment="Top" Width="9" 
                    Source="pack://siteoforigin:,,,/min.png" Panel.ZIndex="4" Grid.Column="1"/>
             <Image HorizontalAlignment="Left" Height="10" Margin="230,4,0,0" VerticalAlignment="Top" Width="10" 
