@@ -1,0 +1,13 @@
+c:\users\cantwt\documents\visual studio 2012\Projects\Terblonix\Terblonix\bin\Debug\Terblonix.exe.config
+c:\users\cantwt\documents\visual studio 2012\Projects\Terblonix\Terblonix\bin\Debug\Terblonix.exe
+c:\users\cantwt\documents\visual studio 2012\Projects\Terblonix\Terblonix\bin\Debug\Terblonix.pdb
+c:\users\cantwt\documents\visual studio 2012\Projects\Terblonix\Terblonix\obj\Debug\Terblonix.csprojResolveAssemblyReference.cache
+c:\users\cantwt\documents\visual studio 2012\Projects\Terblonix\Terblonix\obj\Debug\MainWindow.baml
+c:\users\cantwt\documents\visual studio 2012\Projects\Terblonix\Terblonix\obj\Debug\MainWindow.g.cs
+c:\users\cantwt\documents\visual studio 2012\Projects\Terblonix\Terblonix\obj\Debug\App.g.cs
+c:\users\cantwt\documents\visual studio 2012\Projects\Terblonix\Terblonix\obj\Debug\Terblonix_MarkupCompile.cache
+c:\users\cantwt\documents\visual studio 2012\Projects\Terblonix\Terblonix\obj\Debug\Terblonix.g.resources
+c:\users\cantwt\documents\visual studio 2012\Projects\Terblonix\Terblonix\obj\Debug\Terblonix.Properties.Resources.resources
+c:\users\cantwt\documents\visual studio 2012\Projects\Terblonix\Terblonix\obj\Debug\Terblonix.csproj.GenerateResource.Cache
+c:\users\cantwt\documents\visual studio 2012\Projects\Terblonix\Terblonix\obj\Debug\Terblonix.exe
+c:\users\cantwt\documents\visual studio 2012\Projects\Terblonix\Terblonix\obj\Debug\Terblonix.pdb

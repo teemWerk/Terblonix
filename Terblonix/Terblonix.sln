@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Terblonix", "Terblonix\Terblonix.pyproj", "{EDCC8919-0802-49A8-A72C-84E6D95762F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Terblonix", "Terblonix\Terblonix.csproj", "{DA77C4B1-A19E-4441-B91D-D6BA0B5A53B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EDCC8919-0802-49A8-A72C-84E6D95762F7}.Debug|Any CPU.ActiveCfg = Release|Any CPU
-		{EDCC8919-0802-49A8-A72C-84E6D95762F7}.Debug|Any CPU.Build.0 = Release|Any CPU
-		{EDCC8919-0802-49A8-A72C-84E6D95762F7}.Debug|Any CPU.Deploy.0 = Release|Any CPU
-		{EDCC8919-0802-49A8-A72C-84E6D95762F7}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA77C4B1-A19E-4441-B91D-D6BA0B5A53B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA77C4B1-A19E-4441-B91D-D6BA0B5A53B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA77C4B1-A19E-4441-B91D-D6BA0B5A53B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA77C4B1-A19E-4441-B91D-D6BA0B5A53B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
