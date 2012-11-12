@@ -5,6 +5,8 @@ clr.AddReference("PresentationCore")
 clr.AddReference("WindowsBase")
 clr.AddReference("System")
 
+import os
+
 from IronPython.Compiler import CallTarget0
 from System import TimeSpan, Reflection
 from System.IO import File
@@ -47,7 +49,7 @@ class MainWin(object):
         self.clear.Click += self.clearClick
 
         self.close = self.Root.FindName('close')
-        self.close.Source = 
+        self.close.Source= os.path.dirname(os.path.realpath(__file__)) + '\\close.jpg'
         self.close.MouseEnter += self.closeHandle
         self.close.MouseLeave += self.closeHandle
         self.close.MouseLeftButtonDown += self.closeHandle
