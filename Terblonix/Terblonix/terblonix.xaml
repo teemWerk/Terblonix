@@ -16,38 +16,33 @@
                 <SolidColorBrush Color="Gray">
                 </SolidColorBrush>
             </Grid.Background>
-            <DockPanel>
-                <DockPanel DockPanel.Dock="Top"
-                           Height="32"
-                           Background="#400040"
-                           x:Name="dockbar">
-                    <TextBlock Padding="8"
-                               VerticalAlignment="Center"
-                               HorizontalAlignment="Center"
-                               Text="Terblonix"
-                               Foreground="Black"
-                               FontWeight="Bold"
-                               FontSize="18" />
-                    <Image DockPanel.Dock="Right" Source="C:\Users\cantwt\Documents\GitHub\Terblonix\Terblonix\Terblonix\close.jpg" 
-                           Height="32" Width="32"
-                           HorizontalAlignment="Right" VerticalAlignment="Top" x:Name="close"/>
-                </DockPanel>
-                <ContentControl Name="content" />
+            <DockPanel DockPanel.Dock="Top"
+                        VerticalAlignment="Top"
+                        Height="32"
+                        Background="#400040"
+                        x:Name="dockbar">
+                <TextBlock Padding="8"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            Text="Terblonix"
+                            Foreground="Black"
+                            FontWeight="Bold"
+                            FontSize="18" />
+                <Image DockPanel.Dock="Right" Source="close.jpg" 
+                        Height="32" Width="32"
+                        HorizontalAlignment="Right" VerticalAlignment="Top" x:Name="close"/>
             </DockPanel>
+            <ContentControl Name="content"/>
             <Label Content="Buffer:" Margin="0,0,0,0" Foreground="Black"/>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Width="437" x:Name="portStack">
-                <ComboBox FontSize="16" Width="172" Margin="5,36,5,0" Height="26" x:Name="combo1"></ComboBox>
-                <Button FontSize="16" Margin="5,36,5,0" Height="26" Width="100" x:Name="connect">Connect</Button>
-                <Button FontSize="16" Margin="5,36,5,0" Height="26" Width="100" x:Name="rescan">Scan Ports</Button>
-            </StackPanel>
-            <TextBox Margin="35,325,0,-65" Width="500" Height="300"
+            <ComboBox FontSize="16" Width="172" Margin="5,36,5,0" Height="26" x:Name="combo1"></ComboBox>
+            <Button FontSize="16" Margin="5,36,5,0" Height="26" Width="100" x:Name="connect">Connect</Button>
+            <Button FontSize="16" Margin="5,36,5,0" Height="26" Width="100" x:Name="rescan">Scan Ports</Button>
+            <TextBox Margin="60,260,0,0" Width="500" Height="300"
                      TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" 
                      HorizontalAlignment="Left" x:Name="outputBox"/>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="503" Margin="102,-65,0,65">
-                <TextBox Width="300" Margin="2,267,3,267" Height="26" x:Name="inputBox"/>
-                <Button Content="Send" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="11,0,0,0" Width="88" Background="#FFE4E4E4" BorderThickness="0" x:Name="send" Height="26" RenderTransformOrigin="0.5,-0.719"/>
-                <Button Content="Clear" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="11,267,0,267" Width="88" Background="#FFE4E4E4" BorderThickness="0" x:Name="clear" Height="26"/>
-            </StackPanel>
+            <Button Content="Send" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="11,0,0,0" Width="88" Background="#FFE4E4E4" BorderThickness="0" x:Name="send" Height="26" RenderTransformOrigin="0.5,-0.719"/>
+            <Button Content="Clear" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="11,267,0,267" Width="88" Background="#FFE4E4E4" BorderThickness="0" x:Name="clear" Height="26"/>
+            <TextBox Width="300" Margin="2,267,3,267" Height="26" x:Name="inputBox"/>
         </Grid>
     </Border>
 </Window> 
