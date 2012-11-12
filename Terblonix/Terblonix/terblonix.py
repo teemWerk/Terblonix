@@ -3,8 +3,10 @@ clr.AddReference("IronPython")
 clr.AddReference("PresentationFramework")
 clr.AddReference("PresentationCore")
 clr.AddReference("WindowsBase")
+clr.AddReference("System")
 
 from IronPython.Compiler import CallTarget0
+from System import TimeSpan, Reflection
 from System.IO import File
 from System.IO.Ports import SerialPort
 from System.Windows.Markup import XamlReader
@@ -25,22 +27,11 @@ class MainWin(object):
         self.window = self.Root.FindName('window')
 
         self.combo = self.Root.FindName('combo1')
-        self.ports = SerialPort.GetPortNames()
-        for com in self.ports:
-            item = ComboBoxItem()
-            item.Content = com
-            item.FontSize = 16
-            self.combo.Items.Add(item)
-        if(self.ports):
-            self.combo.SelectedIndex = 0
+        self.combo.MouseEnter += self.scanPorts
+        self.scanPorts(None, None)
 
         self.connect = self.Root.FindName('connect')
         self.connect.Click += self.connectClick
-
-        self.rescan = self.Root.FindName('rescan')
-        self.rescan.Click += self.scanClick
-
-        self.portStack = self.Root.FindName('portStack')
 
         self.dockbar = self.Root.FindName('dockbar')
         self.dockbar.MouseLeftButtonDown += self.dragDock
@@ -56,12 +47,13 @@ class MainWin(object):
         self.clear.Click += self.clearClick
 
         self.close = self.Root.FindName('close')
+        self.close.Source = 
         self.close.MouseEnter += self.closeHandle
         self.close.MouseLeave += self.closeHandle
         self.close.MouseLeftButtonDown += self.closeHandle
         self.close.MouseLeftButtonUp += self.closeHandle
 
-    def scanClick(self, sender, event):
+    def scanPorts(self, sender, event):
         self.combo.Items.Clear()
         self.ports = SerialPort.GetPortNames()
         for com in self.ports:
@@ -86,14 +78,14 @@ class MainWin(object):
         self.window.DragMove()
     
     def sendClick(self, sender, event):
-        self.term.Write(self.inputBuff.Text)
+        self.term.Write(self.inputBuff.Text.replace('\\n', '\n'))
         self.inputBuff.Text = ''
 
     def clearClick(self, sender, event):
         self.outputBuff.Clear()
 
     def dataRX(self, sender, event):
-        tempText = self.term.ReadExisting().replace('\\n','\r\n')
+        tempText = self.term.ReadExisting()
         textDelegate = self.outDel(tempText)
         self.outputBuff.Dispatcher.Invoke(DispatcherPriority.Normal, textDelegate)
         self.outputBuff.Dispatcher.Invoke(DispatcherPriority.Normal, self.scrollToBottom())
@@ -107,6 +99,11 @@ class MainWin(object):
     def closeHandle(self, sender, event):
         print sender
         print event
+
+    def reload(self, sender, event):
+        port_set = frozenset(self.ports)
+        if (port_set.symmetric_difference(SerialPort.GetPortNames())):
+            self.scanPorts(None, None)
 
 
 stage = MainWin()
