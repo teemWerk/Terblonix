@@ -1,4 +1,4 @@
 Terblonix
 ==========
 
-Simple, cool, WPF-based serial port monitor written in IronPython
+Simple, cool, WPF-based serial port monitor written in C# (Formerly IronPython).
