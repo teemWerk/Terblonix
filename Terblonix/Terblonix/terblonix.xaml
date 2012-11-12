@@ -6,38 +6,44 @@
        x:Name="window">
     <Border BorderBrush="#FFC1C1C1" BorderThickness="1">
         <Grid>
-            <DockPanel DockPanel.Dock="Top"
+            <Grid.RowDefinitions>
+                <RowDefinition Height="43*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="257*"/>
+                <ColumnDefinition Width="142*"/>
+            </Grid.ColumnDefinitions>
+            <DockPanel
                         VerticalAlignment="Top"
                         Height="32"
                         Background="White"
-                        x:Name="dockbar">
+                        x:Name="dockbar" Grid.ColumnSpan="2">
                 <TextBlock Padding="8"
                             Text="Terblonix"
                             Foreground="Black"
                             FontWeight="Bold"
                             FontSize="18" />
             </DockPanel>
-            <Rectangle Fill="Transparent" Height="20" Stroke="Black" VerticalAlignment="Top" Width="20" x:Name="min" Margin="719,-1,59,0" Panel.ZIndex="5"/>
-            <Rectangle Fill="Transparent" Height="20" Stroke="Black" VerticalAlignment="Top" Width="20" x:Name="max" Margin="739,-1,39,0" Panel.ZIndex="5"/>
-            <Rectangle Fill="Transparent" Height="20" Stroke="Black" VerticalAlignment="Top" Width="40" x:Name="close" Margin="759,-1,-1,0" Panel.ZIndex="5"/>
-            <Image HorizontalAlignment="Left" Height="10" Margin="724,4,0,0" VerticalAlignment="Top" Width="9" Source="min.png" Panel.ZIndex="4"/>
-            <Image HorizontalAlignment="Left" Height="10" Margin="744,4,0,0" VerticalAlignment="Top" Width="10" Source="max.png" Panel.ZIndex="4"/>
-            <Image HorizontalAlignment="Left" Height="10" Margin="766,4,0,0" VerticalAlignment="Top" Width="10" Source="close.png" Panel.ZIndex="4"/>
+            <Rectangle Fill="Transparent" Height="20" Stroke="Transparent" VerticalAlignment="Top" x:Name="min" Margin="205,-1,59,0" Panel.ZIndex="5" Grid.Column="1"/>
+            <Rectangle Fill="Transparent" Height="20" Stroke="Transparent" VerticalAlignment="Top" x:Name="max" Margin="225,-1,39,0" Panel.ZIndex="5" Grid.Column="1"/>
+            <Rectangle Fill="Transparent" Height="20" Stroke="Transparent" VerticalAlignment="Top" x:Name="close" Margin="245,-1,-1,0" Panel.ZIndex="5" Grid.Column="1"/>
+            <Image HorizontalAlignment="Left" Height="10" Margin="210,4,0,0" VerticalAlignment="Top" Width="9" 
+                   Source="C:\Users\Gordo\Documents\GitHub\Terblonix\Terblonix\Terblonix\min.png" Panel.ZIndex="4" Grid.Column="1"/>
+            <Image HorizontalAlignment="Left" Height="10" Margin="230,4,0,0" VerticalAlignment="Top" Width="10" 
+                   Source="C:\Users\Gordo\Documents\GitHub\Terblonix\Terblonix\Terblonix\max.png" Panel.ZIndex="4" Grid.Column="1"/>
+            <Image HorizontalAlignment="Left" Height="10" Margin="252,4,0,0" VerticalAlignment="Top" Width="10" 
+                   Source="C:\Users\Gordo\Documents\GitHub\Terblonix\Terblonix\Terblonix\close.png" Panel.ZIndex="4" Grid.Column="1"/>
             
-            
-            <ContentControl Name="content">
-            </ContentControl>
-            <ComboBox Margin="524,71,65,507" Height="20" x:Name="combo1"/>
-            <Button Margin="633,44,65,532" Height="22" Width="100" x:Name="connect">Connect</Button>
-            <Button Margin="524,44,174,532" Height="22" Width="100" x:Name="rescan">Scan Ports</Button>
-            <TextBox Margin="10,44,0,37" Width="500"
+            <ComboBox Margin="10,71,65,448" x:Name="combo1" Grid.Column="1" MaxHeight="22" Height="22"/>
+            <Button Margin="119,44,65,475" x:Name="connect" Grid.Column="1" MaxHeight="22" Height="22">Connect</Button>
+            <Button Margin="10,44,174,475" x:Name="rescan" Grid.Column="1" MaxHeight="22" Height="22">Scan Ports</Button>
+            <TextBox Margin="10,44,0,10" Width="494"
                      TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" 
-                     HorizontalAlignment="Left" x:Name="outputBox" BorderBrush="#FFCFCFCF"/>
-            <Button Content="Send" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="413,566,0,10" Width="46" Background="#FFE4E4E4" BorderThickness="0" x:Name="send" Height="22" RenderTransformOrigin="0.5,-0.719"/>
-            <Button Content="Clear" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="464,566,0,10" Width="46" Background="#FFE4E4E4" BorderThickness="0" x:Name="clear" Height="22"/>
-            <TextBox Margin="10,566,390,10" x:Name="inputBox" Padding="1,1,1,1" Height="22" BorderBrush="#FFCFCFCF"/>
-
-
+                     HorizontalAlignment="Left" x:Name="outputBox" BorderBrush="#FFCFCFCF" Grid.Column="0" Grid.Row="0"/>
+            <Button Content="Send" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="407,7,0,10" Width="46" Background="#FFE4E4E4" BorderThickness="0" x:Name="send" Height="22" Grid.Column="0" RenderTransformOrigin="0.478,0.591" Grid.Row="1"/>
+            <Button Content="Clear" VerticalAlignment="Center" Margin="458,7,10,10" Background="#FFE4E4E4" BorderThickness="0" x:Name="clear" Height="22" Grid.Row="1" Grid.Column="0"/>
+            <TextBox Margin="10,7,115,10" x:Name="inputBox" Padding="1,1,1,1" BorderBrush="#FFCFCFCF" Grid.Row="1" Grid.Column="0"/>
         </Grid>
     </Border>
 </Window> 
