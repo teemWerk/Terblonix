@@ -14,7 +14,7 @@ from System.Windows import (
     Application, Window
 )
 from System.Windows.Controls import (
-    Label, ComboBox, ComboBoxItem, TextBox
+    Label, ComboBox, ComboBoxItem, TextBox, Image
 )
 
 class MainWin(object):
@@ -54,6 +54,12 @@ class MainWin(object):
 
         self.clear = self.Root.FindName('clear')
         self.clear.Click += self.clearClick
+
+        self.close = self.Root.FindName('close')
+        self.close.MouseEnter += self.closeHandle
+        self.close.MouseLeave += self.closeHandle
+        self.close.MouseLeftButtonDown += self.closeHandle
+        self.close.MouseLeftButtonUp += self.closeHandle
 
     def scanClick(self, sender, event):
         self.combo.Items.Clear()
@@ -97,6 +103,10 @@ class MainWin(object):
 
     def scrollToBottom(self):
         return CallTarget0(lambda:TextBox.ScrollToEnd(self.outputBuff))
+
+    def closeHandle(self, sender, event):
+        print sender
+        print event
 
 
 stage = MainWin()
