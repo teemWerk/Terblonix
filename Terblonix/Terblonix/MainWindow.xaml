@@ -30,11 +30,11 @@
             <Rectangle Fill="Transparent" Height="20" Stroke="Transparent" VerticalAlignment="Top" x:Name="max" Margin="225,-1,39,0" Panel.ZIndex="5" Grid.Column="1" MouseLeftButtonUp="max_MouseLeftButtonUp"/>
             <Rectangle Fill="Transparent" Height="20" Stroke="Transparent" VerticalAlignment="Top" x:Name="close" Margin="245,-1,-1,0" Panel.ZIndex="5" Grid.Column="1" MouseLeftButtonUp="close_MouseLeftButtonUp"/>
             <Image HorizontalAlignment="Left" Height="10" Margin="210,4,0,0" VerticalAlignment="Top" Width="9" 
-                   Source="pack://siteoforigin:,,,/min.png" Panel.ZIndex="4" Grid.Column="1"/>
+                   Source="Images\min.png" Panel.ZIndex="4" Grid.Column="1"/>
             <Image HorizontalAlignment="Left" Height="10" Margin="230,4,0,0" VerticalAlignment="Top" Width="10" 
-                   Source="pack://siteoforigin:,,,/max.png" Panel.ZIndex="4" Grid.Column="1"/>
+                   Source="Images\max.png" Panel.ZIndex="4" Grid.Column="1"/>
             <Image HorizontalAlignment="Left" Height="10" Margin="252,4,0,0" VerticalAlignment="Top" Width="10" 
-                   Source="pack://siteoforigin:,,,/close.png" Panel.ZIndex="4" Grid.Column="1"/>
+                   Source="Images\close.png" Panel.ZIndex="4" Grid.Column="1"/>
 
             <ComboBox Margin="10,71,65,448" x:Name="combo1" Grid.Column="1" MaxHeight="22" Height="22" MaxWidth="209"/>
             <Button Margin="119,44,65,475" x:Name="connect" Grid.Column="1" MaxHeight="22" Height="22" Click="connect_Click" MaxWidth="100">Connect</Button>
