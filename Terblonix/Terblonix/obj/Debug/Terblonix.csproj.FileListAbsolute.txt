@@ -36,4 +36,3 @@ C:\Users\timothy\Documents\GitHub\Terblonix\Terblonix\Terblonix\obj\Debug\Terblo
 C:\Users\timothy\Documents\GitHub\Terblonix\Terblonix\Terblonix\obj\Debug\Terblonix.csproj.GenerateResource.Cache
 C:\Users\timothy\Documents\GitHub\Terblonix\Terblonix\Terblonix\obj\Debug\Terblonix.exe
 C:\Users\timothy\Documents\GitHub\Terblonix\Terblonix\Terblonix\obj\Debug\Terblonix.pdb
-C:\Users\timothy\Documents\GitHub\Terblonix\Terblonix\Terblonix\obj\Debug\Terblonix.csprojResolveAssemblyReference.cache
