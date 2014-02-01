@@ -100,8 +100,7 @@ namespace Terblonix
 
         private void DataRX(object sender, SerialDataReceivedEventArgs e)
         {
-            //outputBox.Dispatcher.Invoke( delegate() { outputBox.Text=sb.Append(term.ReadExisting()).ToString(); } );
-            outputBox.Dispatcher.Invoke(delegate() { outputBox.AppendText(term.ReadExisting()); });
+            outputBox.Dispatcher.Invoke(delegate() { outputBox.AppendText(term.ReadExisting());});
             outputBox.Dispatcher.Invoke(delegate() { outputBox.ScrollToEnd(); });
         }
     }

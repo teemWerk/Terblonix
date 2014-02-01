@@ -73,7 +73,9 @@
             Grid.Column="0"
             Grid.Row="0"
             HorizontalAlignment="Stretch"
-            BorderBrush="#FFCFCFCF"/>
+            BorderBrush="#FFCFCFCF"
+            ScrollViewer.VerticalScrollBarVisibility="Auto"
+            ScrollViewer.CanContentScroll="True"/>
         <DockPanel
             Grid.Column="0"
             Grid.Row="1">
