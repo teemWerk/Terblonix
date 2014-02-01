@@ -13,7 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+
 using System.IO.Ports;
+using System.Windows.Interop;
 
 namespace Terblonix
 {
@@ -22,13 +24,37 @@ namespace Terblonix
     /// </summary>
     public partial class MainWindow : Window
     {
-        public SerialPort term = new SerialPort();                            // Toplevel Serial Port object. The IO stream of COM port
+        private SerialPort term = new SerialPort();
 
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void init(object sender, EventArgs e)
+        {
             combo1_ItemHandler(null, null);                                   // Populate the combo box when the program initializes
             term.DataReceived += new SerialDataReceivedEventHandler(DataRX);  // The terminal outputs to the text buffer when it receives data
+
+            IntPtr windowHandle = (new WindowInteropHelper(this)).Handle;
+            HwndSource src = HwndSource.FromHwnd(windowHandle);
+            src.AddHook(new HwndSourceHook(WndProc));
+        }
+
+        private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
+        {
+            // Handle WM_DEVICECHANGE... 
+            if (msg == 0x219)
+            {
+                combo1.Items.Clear();
+                foreach (string com in SerialPort.GetPortNames())
+                {
+                    combo1.Items.Add(com);
+                }
+                combo1.SelectedIndex = 0;
+            }
+
+            return IntPtr.Zero;
         }
 
         private void combo1_ItemHandler(object sender, RoutedEventArgs e)     // Populate the combo box with available serial ports
@@ -58,17 +84,6 @@ namespace Terblonix
             }
         }
 
-        private void DragDock(object sender, MouseButtonEventArgs e)          // Holding the left mouse button down on the top text bar
-        {                                                                     //   allows the window to be dragged
-            window.DragMove();
-            if (window.ResizeMode == ResizeMode.NoResize)          // Dragging the maximzed window restores to default size right now
-            {
-                window.ResizeMode = ResizeMode.CanResizeWithGrip;
-                window.Width = 800;
-                window.Height = 600;
-            }
-        }
-
         private void send_Click(object sender, RoutedEventArgs e)             // Writes the text from the send line to the serial port
         {
             term.Write(inputBox.Text.Replace("\\n", "\n"));
@@ -86,25 +101,6 @@ namespace Terblonix
             Action append = delegate() { outputBox.AppendText(tempText); };
             outputBox.Dispatcher.Invoke(append);
             outputBox.Dispatcher.Invoke(delegate() { outputBox.ScrollToEnd(); });
-        }
-
-        private void close_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)  // Close the Window
-        {
-            window.Close();
-        }
-
-        private void max_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)   // Maximize the window, should also restore
-        {
-            window.Width = SystemParameters.WorkArea.Width;
-            window.Height = SystemParameters.WorkArea.Height;
-            window.Left = 0;
-            window.Top = 0;
-            window.ResizeMode = ResizeMode.NoResize;
-        }
-
-        private void min_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)  // Minimize the Window
-        {
-            window.WindowState = WindowState.Minimized;
         }
     }
 }

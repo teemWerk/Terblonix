@@ -1,50 +1,24 @@
 ﻿<Window x:Class="Terblonix.MainWindow"
        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-       Title="Terblonix" Width="800" Height="600" WindowStyle="None" ResizeMode="CanResizeWithGrip"
-       AllowsTransparency="True" Background="White"
-       x:Name="window">
-    <Border BorderBrush="#FFC1C1C1" BorderThickness="1">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="43*"/>
-                <RowDefinition Height="3*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="257*"/>
-                <ColumnDefinition Width="142*"/>
-            </Grid.ColumnDefinitions>
-            <DockPanel
-                        VerticalAlignment="Top"
-                        Height="32"
-                        Background="White"
-                        x:Name="dockbar" Grid.ColumnSpan="2">
-                <TextBlock Padding="8"
-                            Text="Terblonix"
-                            Foreground="Black"
-                            FontWeight="Bold"
-                            FontSize="18" 
-                            MouseLeftButtonDown="DragDock"/>
-            </DockPanel>
-            <Rectangle Fill="Transparent" Height="20" Stroke="Transparent" VerticalAlignment="Top" x:Name="min" Margin="205,-1,59,0" Panel.ZIndex="5" Grid.Column="1" MouseLeftButtonUp="min_MouseLeftButtonUp"/>
-            <Rectangle Fill="Transparent" Height="20" Stroke="Transparent" VerticalAlignment="Top" x:Name="max" Margin="225,-1,39,0" Panel.ZIndex="5" Grid.Column="1" MouseLeftButtonUp="max_MouseLeftButtonUp"/>
-            <Rectangle Fill="Transparent" Height="20" Stroke="Transparent" VerticalAlignment="Top" x:Name="close" Margin="245,-1,-1,0" Panel.ZIndex="5" Grid.Column="1" MouseLeftButtonUp="close_MouseLeftButtonUp"/>
-            <Image HorizontalAlignment="Left" Height="10" Margin="210,4,0,0" VerticalAlignment="Top" Width="9" 
-                   Source="Images\min.png" Panel.ZIndex="4" Grid.Column="1"/>
-            <Image HorizontalAlignment="Left" Height="10" Margin="230,4,0,0" VerticalAlignment="Top" Width="10" 
-                   Source="Images\max.png" Panel.ZIndex="4" Grid.Column="1"/>
-            <Image HorizontalAlignment="Left" Height="10" Margin="252,4,0,0" VerticalAlignment="Top" Width="10" 
-                   Source="Images\close.png" Panel.ZIndex="4" Grid.Column="1"/>
-
-            <ComboBox Margin="10,71,65,448" x:Name="combo1" Grid.Column="1" MaxHeight="22" Height="22" MaxWidth="209"/>
-            <Button Margin="119,44,65,475" x:Name="connect" Grid.Column="1" MaxHeight="22" Height="22" Click="connect_Click" MaxWidth="100">Connect</Button>
-            <Button Margin="10,44,174,475" x:Name="rescan" Grid.Column="1" MaxHeight="22" Height="22" Click="combo1_ItemHandler" MaxWidth="100">Scan Ports</Button>
-            <TextBox Margin="10,44,0,10" Width="494" MaxWidth="494" MaxHeight="505"
+       Title="Terblonix" Width="800" Height="600" Background="White"
+       x:Name="window" Loaded="init">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24*"/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="100*"/>
+        </Grid.ColumnDefinitions>
+        <ComboBox Margin="42,126,42,0" x:Name="combo1" Background="#FFE4E4E4" BorderThickness="0" Grid.Column="1" Height="40" MaxWidth="200" FontSize="20" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="180" FontWeight="ExtraLight" FontStretch="Condensed" VerticalContentAlignment="Center"/>
+        <Button Margin="42,24,42,0" x:Name="connect" Background="#FFE4E4E4" BorderThickness="0" Grid.Column="1" Height="40" Click="connect_Click" MaxWidth="200" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="-0.401,0.494" HorizontalAlignment="Center" Width="180" FontStretch="Condensed" FontWeight="ExtraLight" Padding="0">Connect</Button>
+        <TextBox Margin="24,24,0,29" Width="494" MaxWidth="494" MaxHeight="505"
                      TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" 
                      HorizontalAlignment="Left" x:Name="outputBox" BorderBrush="#FFCFCFCF" Grid.Column="0" Grid.Row="0"/>
-            <Button Content="Send" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="407,7,0,10" Width="46" Background="#FFE4E4E4" BorderThickness="0" x:Name="send" Height="22" Grid.Column="0" RenderTransformOrigin="0.478,0.591" Grid.Row="1" Click="send_Click" MaxWidth="46"/>
-            <Button Content="Clear" VerticalAlignment="Center" Margin="458,7,10,10" Background="#FFE4E4E4" BorderThickness="0" x:Name="clear" Height="22" Grid.Row="1" Grid.Column="0" Click="clear_Click" MaxWidth="46"/>
-            <TextBox Margin="10,7,115,10" x:Name="inputBox" Padding="1,1,1,1" BorderBrush="#FFCFCFCF" Grid.Row="1" Grid.Column="0" MaxHeight="22" MaxWidth="389"/>
-        </Grid>
-    </Border>
+        <Button Content="Send" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="400,10,0,82" Width="40" Background="#FFE4E4E4" BorderThickness="0" x:Name="send" Height="40" Grid.Column="0" RenderTransformOrigin="0.478,0.591" Grid.Row="1" Click="send_Click"/>
+        <Button Content="Clear" VerticalAlignment="Center" Margin="458,10,10,82" Background="#FFE4E4E4" BorderThickness="0" x:Name="clear" Height="40" Grid.Row="1" Grid.Column="0" Click="clear_Click" Width="40"/>
+        <TextBox Margin="24,0,133,74" x:Name="inputBox" Padding="1,1,1,1" BorderBrush="#FFCFCFCF" Grid.Column="0" Height="40" Grid.Row="1"/>
+    </Grid>
 </Window> 
