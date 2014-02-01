@@ -25,6 +25,7 @@ namespace Terblonix
     public partial class MainWindow : Window
     {
         private SerialPort term = new SerialPort();
+        private StringBuilder sb = new StringBuilder();
 
         public MainWindow()
         {
@@ -74,6 +75,7 @@ namespace Terblonix
                 combo1.IsEnabled = false;
                 connect.Content = "Disconnect";
                 term.PortName = combo1.SelectedValue.ToString();
+                term.BaudRate = (int) combo2.SelectionBoxItem;
                 term.Open();
             }
             else
@@ -92,14 +94,14 @@ namespace Terblonix
 
         private void clear_Click(object sender, RoutedEventArgs e)            // Empties the output buffer, pretty simple
         {
-            outputBox.Clear();
+            //outputBox.Clear();
+            outputBox.Text = "";
         }
 
-        private void DataRX(object sender, SerialDataReceivedEventArgs e)     // Takes all the data from the serial line and displays it
-        {                                                                     //   on the output text box
-            string tempText = term.ReadExisting();
-            Action append = delegate() { outputBox.AppendText(tempText); };
-            outputBox.Dispatcher.Invoke(append);
+        private void DataRX(object sender, SerialDataReceivedEventArgs e)
+        {
+            //outputBox.Dispatcher.Invoke( delegate() { outputBox.Text=sb.Append(term.ReadExisting()).ToString(); } );
+            outputBox.Dispatcher.Invoke(delegate() { outputBox.AppendText(term.ReadExisting()); });
             outputBox.Dispatcher.Invoke(delegate() { outputBox.ScrollToEnd(); });
         }
     }
